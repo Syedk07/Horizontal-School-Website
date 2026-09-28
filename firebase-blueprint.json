@@ -1,0 +1,138 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile record synchronized with Firebase Authentication.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "format": "email", "maxLength": 128 },
+        "username": { "type": "string", "maxLength": 64 },
+        "role": { "type": "string", "enum": ["student", "teacher", "admin"] },
+        "created_at": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "email", "username", "role"]
+    },
+    "AdminDoc": {
+      "title": "AdminDoc",
+      "description": "Marker document establishing admin role verification.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email", "maxLength": 128 },
+        "role": { "type": "string", "enum": ["admin"] },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["email", "role"]
+    },
+    "AdmissionEnquiry": {
+      "title": "AdmissionEnquiry",
+      "description": "Online student admission enquiry submitted by prospective parents.",
+      "type": "object",
+      "properties": {
+        "student_name": { "type": "string", "maxLength": 100 },
+        "parent_name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 120 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "date_of_birth": { "type": "string", "maxLength": 30 },
+        "grade_applying_for": { "type": "string", "maxLength": 100 },
+        "previous_school": { "type": "string", "maxLength": 150 },
+        "message": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["Pending", "Reviewed", "Accepted", "Rejected"] },
+        "created_at": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["student_name", "parent_name", "email", "phone", "date_of_birth", "grade_applying_for", "status"]
+    },
+    "ContactMessage": {
+      "title": "ContactMessage",
+      "description": "General enquiry or correspondence submitted via the contact desk.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 120 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "subject": { "type": "string", "maxLength": 200 },
+        "message": { "type": "string", "maxLength": 2000 },
+        "status": { "type": "string", "enum": ["Unread", "Read", "Replied"] },
+        "created_at": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["name", "email", "subject", "message", "status"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Institutional bulletin and public announcements.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "category": { "type": "string", "maxLength": 64 },
+        "target_audience": { "type": "string", "maxLength": 64 },
+        "date": { "type": "string", "maxLength": 32 },
+        "is_pinned": { "type": "boolean" },
+        "created_at": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["title", "description", "category", "target_audience", "date"]
+    },
+    "EventItem": {
+      "title": "EventItem",
+      "description": "Campus academic and cultural calendar events.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "date": { "type": "string", "maxLength": 64 },
+        "time": { "type": "string", "maxLength": 64 },
+        "location": { "type": "string", "maxLength": 128 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "category": { "type": "string", "maxLength": 64 },
+        "image_url": { "type": "string", "maxLength": 500 },
+        "created_at": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["title", "date", "time", "location", "description"]
+    },
+    "NewsItem": {
+      "title": "NewsItem",
+      "description": "School achievements, faculty publications and press notices.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "date": { "type": "string", "maxLength": 64 },
+        "category": { "type": "string", "maxLength": 64 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "content": { "type": "string", "maxLength": 5000 },
+        "image_url": { "type": "string", "maxLength": 500 },
+        "author": { "type": "string", "maxLength": 100 },
+        "created_at": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["title", "date", "category", "description", "content"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles indexed by UID."
+    },
+    "/admins/{userId}": {
+      "schema": "AdminDoc",
+      "description": "Trusted admin whitelist records."
+    },
+    "/admissions/{enquiryId}": {
+      "schema": "AdmissionEnquiry",
+      "description": "Submitted admission applications."
+    },
+    "/contacts/{messageId}": {
+      "schema": "ContactMessage",
+      "description": "Correspondence received from public contact form."
+    },
+    "/announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Official campus announcements."
+    },
+    "/events/{eventId}": {
+      "schema": "EventItem",
+      "description": "Campus events scheduled across departments."
+    },
+    "/news/{newsId}": {
+      "schema": "NewsItem",
+      "description": "Institutional news articles and updates."
+    }
+  }
+}

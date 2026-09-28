@@ -1,0 +1,6 @@
+{
+  "name": "HORIZONTAL School",
+  "description": "Official institutional portal and school management platform for HORIZONTAL, where learning moves forward.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

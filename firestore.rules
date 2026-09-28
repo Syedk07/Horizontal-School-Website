@@ -1,0 +1,139 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Global Catch-All Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (request.auth.token.email == 'afnanbajhao05@gmail.com' && request.auth.token.email_verified == true)
+      );
+    }
+
+    function isValidAdmission(data) {
+      return data.keys().hasAll(['student_name', 'parent_name', 'email', 'phone', 'date_of_birth', 'grade_applying_for', 'status']) &&
+        data.keys().hasOnly(['student_name', 'parent_name', 'email', 'phone', 'date_of_birth', 'grade_applying_for', 'previous_school', 'message', 'status', 'created_at']) &&
+        data.student_name is string && data.student_name.size() > 0 && data.student_name.size() <= 100 &&
+        data.parent_name is string && data.parent_name.size() > 0 && data.parent_name.size() <= 100 &&
+        data.email is string && data.email.size() <= 120 &&
+        data.phone is string && data.phone.size() <= 30 &&
+        data.date_of_birth is string && data.date_of_birth.size() <= 30 &&
+        data.grade_applying_for is string && data.grade_applying_for.size() <= 100 &&
+        data.status in ['Pending', 'Reviewed', 'Accepted', 'Rejected'] &&
+        (!('previous_school' in data) || (data.previous_school is string && data.previous_school.size() <= 150)) &&
+        (!('message' in data) || (data.message is string && data.message.size() <= 1000));
+    }
+
+    function isValidContact(data) {
+      return data.keys().hasAll(['name', 'email', 'subject', 'message', 'status']) &&
+        data.keys().hasOnly(['name', 'email', 'phone', 'subject', 'message', 'status', 'created_at']) &&
+        data.name is string && data.name.size() > 0 && data.name.size() <= 100 &&
+        data.email is string && data.email.size() <= 120 &&
+        data.subject is string && data.subject.size() > 0 && data.subject.size() <= 200 &&
+        data.message is string && data.message.size() > 0 && data.message.size() <= 2000 &&
+        data.status in ['Unread', 'Read', 'Replied'] &&
+        (!('phone' in data) || (data.phone is string && data.phone.size() <= 30));
+    }
+
+    function isValidAnnouncement(data) {
+      return data.keys().hasAll(['title', 'description', 'category', 'target_audience', 'date']) &&
+        data.keys().hasOnly(['title', 'description', 'category', 'target_audience', 'date', 'is_pinned', 'created_at']) &&
+        data.title is string && data.title.size() > 0 && data.title.size() <= 200 &&
+        data.description is string && data.description.size() <= 2000 &&
+        data.category is string && data.category.size() <= 64 &&
+        data.target_audience is string && data.target_audience.size() <= 64 &&
+        data.date is string && data.date.size() <= 32;
+    }
+
+    function isValidEvent(data) {
+      return data.keys().hasAll(['title', 'date', 'time', 'location', 'description']) &&
+        data.keys().hasOnly(['title', 'date', 'time', 'location', 'description', 'category', 'image_url', 'created_at']) &&
+        data.title is string && data.title.size() > 0 && data.title.size() <= 200 &&
+        data.date is string && data.date.size() <= 64 &&
+        data.time is string && data.time.size() <= 64 &&
+        data.location is string && data.location.size() <= 128 &&
+        data.description is string && data.description.size() <= 2000;
+    }
+
+    function isValidNews(data) {
+      return data.keys().hasAll(['title', 'date', 'category', 'description', 'content']) &&
+        data.keys().hasOnly(['title', 'date', 'category', 'description', 'content', 'image_url', 'author', 'created_at']) &&
+        data.title is string && data.title.size() > 0 && data.title.size() <= 200 &&
+        data.date is string && data.date.size() <= 64 &&
+        data.category is string && data.category.size() <= 64 &&
+        data.description is string && data.description.size() <= 1000 &&
+        data.content is string && data.content.size() <= 5000;
+    }
+
+    // Collection rules
+    match /users/{userId} {
+      allow get: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow list: if isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /admins/{userId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /admissions/{enquiryId} {
+      allow get: if isAdmin();
+      allow list: if isAdmin();
+      allow create: if isValidId(enquiryId) && isValidAdmission(request.resource.data) && request.resource.data.status == 'Pending';
+      allow update: if isValidId(enquiryId) && isAdmin() && isValidAdmission(request.resource.data);
+      allow delete: if isValidId(enquiryId) && isAdmin();
+    }
+
+    match /contacts/{messageId} {
+      allow get: if isAdmin();
+      allow list: if isAdmin();
+      allow create: if isValidId(messageId) && isValidContact(request.resource.data) && request.resource.data.status == 'Unread';
+      allow update: if isValidId(messageId) && isAdmin() && isValidContact(request.resource.data);
+      allow delete: if isValidId(messageId) && isAdmin();
+    }
+
+    match /announcements/{announcementId} {
+      allow read: if true;
+      allow create: if isValidId(announcementId) && isAdmin() && isValidAnnouncement(request.resource.data);
+      allow update: if isValidId(announcementId) && isAdmin() && isValidAnnouncement(request.resource.data);
+      allow delete: if isValidId(announcementId) && isAdmin();
+    }
+
+    match /events/{eventId} {
+      allow read: if true;
+      allow create: if isValidId(eventId) && isAdmin() && isValidEvent(request.resource.data);
+      allow update: if isValidId(eventId) && isAdmin() && isValidEvent(request.resource.data);
+      allow delete: if isValidId(eventId) && isAdmin();
+    }
+
+    match /news/{newsId} {
+      allow read: if true;
+      allow create: if isValidId(newsId) && isAdmin() && isValidNews(request.resource.data);
+      allow update: if isValidId(newsId) && isAdmin() && isValidNews(request.resource.data);
+      allow delete: if isValidId(newsId) && isAdmin();
+    }
+
+    // Connection test document
+    match /test/{docId} {
+      allow read: if true;
+    }
+  }
+}
