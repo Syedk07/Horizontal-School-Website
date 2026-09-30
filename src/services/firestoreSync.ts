@@ -157,7 +157,7 @@ export const firestoreSync = {
         description: data.description.trim().slice(0, 1000),
         content: data.content.trim().slice(0, 5000),
         image_url: (data.image_url || '').slice(0, 500),
-        author: (data.author || 'HORIZONTAL Communications').trim().slice(0, 100),
+        author: (data.author || 'HORIZON Communications').trim().slice(0, 100),
         created_at: new Date().toISOString(),
       });
     } catch (error) {
@@ -165,3 +165,4 @@ export const firestoreSync = {
     }
   }
 };
+

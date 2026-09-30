@@ -43,7 +43,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
     try {
       await loginWithGoogle();
       // Auto-match or grant administrative session
-      const adminRes = await api.login('admin@horizontal.edu', 'Admin@2026').catch(() => null);
+      const adminRes = await api.login('admin@HORIZON.edu', 'Admin@2026').catch(() => null);
       if (adminRes) {
         onLoginSuccess(adminRes.user);
       } else {
@@ -84,7 +84,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
           onClick={onNavigateHome}
           className="text-xs uppercase tracking-widest text-amber-800 font-semibold hover:underline cursor-pointer"
         >
-          ← Return to HORIZONTAL Public Portal
+          ← Return to HORIZON Public Portal
         </button>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">
           Campus Portal Authentication
@@ -126,7 +126,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
                   required
                   value={identifier}
                   onChange={(e) => setIdentifier(e.target.value)}
-                  placeholder="student@horizontal.edu or username"
+                  placeholder="student@HORIZON.edu or username"
                   className="w-full pl-9 pr-3 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-sm text-stone-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-800/20 focus:border-amber-800"
                 />
               </div>
@@ -207,12 +207,12 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
             </button>
             <div className="flex items-center justify-center gap-1.5 mt-2 text-stone-500 text-[11px]">
               <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-              <span>Connected to Firestore Database: <span className="font-mono text-stone-700">horizontal-school</span></span>
+              <span>Connected to Firestore Database: <span className="font-mono text-stone-700">HORIZON-school</span></span>
             </div>
           </div>
 
           <div className="pt-4 border-t border-stone-100 text-center text-xs text-stone-500">
-            Forgot your institutional credentials? Contact IT Support at <span className="font-mono text-stone-700">it-support@horizontal.edu</span>
+            Forgot your institutional credentials? Contact IT Support at <span className="font-mono text-stone-700">it-support@HORIZON.edu</span>
           </div>
         </div>
 
@@ -235,7 +235,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
               {/* Student */}
               <button
                 type="button"
-                onClick={() => handleQuickFill('student@horizontal.edu', 'Student@2026')}
+                onClick={() => handleQuickFill('student@HORIZON.edu', 'Student@2026')}
                 className="w-full text-left p-3.5 bg-white border border-stone-200 hover:border-amber-700 rounded-xl transition-all cursor-pointer flex items-start gap-3 shadow-xs group"
               >
                 <div className="p-2 bg-blue-50 text-blue-900 rounded-lg shrink-0 group-hover:bg-blue-100">
@@ -246,7 +246,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
                     Alexander Hayes (Student)
                   </div>
                   <div className="text-xs text-stone-500 font-mono">
-                    student@horizontal.edu
+                    student@HORIZON.edu
                   </div>
                   <div className="text-xs text-amber-800 font-medium mt-0.5">
                     Grade 11-A · Timetable & Assignments
@@ -257,7 +257,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
               {/* Teacher */}
               <button
                 type="button"
-                onClick={() => handleQuickFill('teacher@horizontal.edu', 'Teacher@2026')}
+                onClick={() => handleQuickFill('teacher@HORIZON.edu', 'Teacher@2026')}
                 className="w-full text-left p-3.5 bg-white border border-stone-200 hover:border-amber-700 rounded-xl transition-all cursor-pointer flex items-start gap-3 shadow-xs group"
               >
                 <div className="p-2 bg-emerald-50 text-emerald-900 rounded-lg shrink-0 group-hover:bg-emerald-100">
@@ -268,7 +268,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
                     Prof. Sarah Jenkins (Teacher)
                   </div>
                   <div className="text-xs text-stone-500 font-mono">
-                    teacher@horizontal.edu
+                    teacher@HORIZON.edu
                   </div>
                   <div className="text-xs text-emerald-800 font-medium mt-0.5">
                     Math Dept Head · Grade 11-A Roster
@@ -279,7 +279,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
               {/* Admin */}
               <button
                 type="button"
-                onClick={() => handleQuickFill('admin@horizontal.edu', 'Admin@2026')}
+                onClick={() => handleQuickFill('admin@HORIZON.edu', 'Admin@2026')}
                 className="w-full text-left p-3.5 bg-white border border-stone-200 hover:border-amber-700 rounded-xl transition-all cursor-pointer flex items-start gap-3 shadow-xs group"
               >
                 <div className="p-2 bg-amber-50 text-amber-900 rounded-lg shrink-0 group-hover:bg-amber-100">
@@ -290,7 +290,7 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
                     Dr. Marcus Vance (Admin)
                   </div>
                   <div className="text-xs text-stone-500 font-mono">
-                    admin@horizontal.edu
+                    admin@HORIZON.edu
                   </div>
                   <div className="text-xs text-amber-900 font-medium mt-0.5">
                     Full Admissions, Enquiries & Postings
@@ -310,3 +310,4 @@ export const PortalLogin: React.FC<PortalLoginProps> = ({ onLoginSuccess, onNavi
     </div>
   );
 };
+

@@ -200,7 +200,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ user, onLogout, onNavi
             </span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
-            HORIZONTAL Institutional Administration
+            HORIZON Institutional Administration
           </h1>
           <p className="text-xs text-stone-400 mt-1">
             Logged in as {user.email} · Full Database CRUD Authorities
@@ -731,7 +731,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ user, onLogout, onNavi
                 required
                 value={newNews.title}
                 onChange={(e) => setNewNews({ ...newNews, title: e.target.value })}
-                placeholder="e.g. HORIZONTAL Scholars Awarded National Research Grants"
+                placeholder="e.g. HORIZON Scholars Awarded National Research Grants"
                 className="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-sm text-stone-900 focus:bg-white"
               />
             </div>
@@ -793,3 +793,4 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ user, onLogout, onNavi
     </div>
   );
 };
+

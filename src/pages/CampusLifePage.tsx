@@ -144,7 +144,7 @@ export const CampusLifePage: React.FC<CampusLifePageProps> = ({ onNavigate }) =>
           Vibrant Culture Beyond the Classroom
         </h1>
         <p className="text-lg text-stone-600 leading-relaxed">
-          At HORIZONTAL, learning breathes through competition on the field, late afternoons in the robotics lab, chamber orchestral rehearsals, and lifelong camaraderie within our house system.
+          At HORIZON, learning breathes through competition on the field, late afternoons in the robotics lab, chamber orchestral rehearsals, and lifelong camaraderie within our house system.
         </p>
       </div>
 
@@ -288,7 +288,7 @@ export const CampusLifePage: React.FC<CampusLifePageProps> = ({ onNavigate }) =>
               Camaraderie & Mentorship
             </span>
             <h2 className="font-serif text-3xl font-bold text-stone-900 mt-1">
-              The Four Houses of HORIZONTAL
+              The Four Houses of HORIZON
             </h2>
             <p className="text-sm text-stone-600 max-w-2xl mt-2">
               Upon entry, every student is inducted into one of four historic Houses. Houses foster inter-grade mentorship, leadership elections, and spirited term-long cups.
@@ -331,7 +331,7 @@ export const CampusLifePage: React.FC<CampusLifePageProps> = ({ onNavigate }) =>
       {/* 6. Action Call */}
       <div className="bg-stone-900 text-white rounded-2xl p-8 text-center space-y-4">
         <h3 className="font-serif text-2xl font-bold text-white">
-          Experience HORIZONTAL Campus Life
+          Experience HORIZON Campus Life
         </h3>
         <p className="text-sm text-stone-300 max-w-xl mx-auto">
           Schedule a personalized walkthrough or attend our next Open House day to meet coaches, club presidents, and house captains.
@@ -347,3 +347,4 @@ export const CampusLifePage: React.FC<CampusLifePageProps> = ({ onNavigate }) =>
     </div>
   );
 };
+

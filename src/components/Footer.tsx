@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPortal }) => {
           {/* Column 1: Brand & Philosophy */}
           <div className="lg:col-span-2 space-y-4">
             <span className="font-serif text-2xl font-bold tracking-tight text-white block">
-              HORIZONTAL
+              HORIZON
             </span>
             <p className="text-sm text-stone-400 max-w-sm leading-relaxed">
               Where Learning Moves Forward. A forward-thinking, university-preparatory institution cultivating intellectual rigor, disciplined inquiry, and ethical leadership since 1991.
@@ -141,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPortal }) => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-stone-400 shrink-0" />
-                <span>admissions@horizontal.edu</span>
+                <span>admissions@HORIZON.edu</span>
               </div>
               <div className="text-xs text-stone-400 pt-1">
                 Office Hours: Mon–Fri, 08:00 – 16:30
@@ -154,7 +154,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPortal }) => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <div>
-            © {new Date().getFullYear()} HORIZONTAL School. All rights reserved.
+            © {new Date().getFullYear()} HORIZON School. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <span className="hover:text-stone-300 transition-colors cursor-pointer">Privacy Charter</span>
@@ -166,3 +166,4 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPortal }) => {
     </footer>
   );
 };
+

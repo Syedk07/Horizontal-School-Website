@@ -42,7 +42,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ events, loading }) => {
           Events & Convocations
         </h1>
         <p className="text-lg text-stone-600 leading-relaxed">
-          From scientific exhibitions to athletics galas and parent conferences, stay connected with key dates across the HORIZONTAL academic year.
+          From scientific exhibitions to athletics galas and parent conferences, stay connected with key dates across the HORIZON academic year.
         </p>
       </div>
 
@@ -82,7 +82,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ events, loading }) => {
       {/* 3. Events Grid */}
       {loading ? (
         <div className="text-center py-20 text-stone-500 font-mono text-sm">
-          Loading events from HORIZONTAL server...
+          Loading events from HORIZON server...
         </div>
       ) : filteredEvents.length === 0 ? (
         <div className="text-center py-16 bg-white border border-stone-200 rounded-xl p-8 space-y-3">
@@ -219,3 +219,4 @@ export const EventsPage: React.FC<EventsPageProps> = ({ events, loading }) => {
     </div>
   );
 };
+

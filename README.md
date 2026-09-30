@@ -1,19 +1,19 @@
-# Horizontal-School-Website
+# HORIZON-School-Website
 
-# HORIZONTAL — Official School & Institutional Management Portal
+# HORIZON — Official School & Institutional Management Portal
 
 > **"Where Learning Moves Forward."**
 
-🌐 **Live Website:** [https://horizontal--school.web.app](https://horizontal--school.web.app)
+🌐 **Live Website:** [https://HORIZON--school.web.app](https://HORIZON--school.web.app)
 
-HORIZONTAL is a modern, portfolio-quality, full-stack school information and academic management platform built for a prestigious preparatory academy. Designed for prospective parents, enrolled scholars, faculty members, and institutional directors, this application integrates a Python Flask + SQLAlchemy + SQLite backend with a high-fidelity, responsive frontend.
+HORIZON is a modern, portfolio-quality, full-stack school information and academic management platform built for a prestigious preparatory academy. Designed for prospective parents, enrolled scholars, faculty members, and institutional directors, this application integrates a Python Flask + SQLAlchemy + SQLite backend with a high-fidelity, responsive frontend.
 
 ---
 
 ## 🏛️ Architectural Overview
 
 ```
-HORIZONTAL/
+HORIZON/
 ├── app.py                   # Core Flask Application, REST APIs, Session Auth & Error Handlers
 ├── config.py                # Database and Security Configurations
 ├── models.py                # SQLAlchemy Models & Serialization
@@ -23,7 +23,7 @@ HORIZONTAL/
 ├── README.md                # Documentation & Architecture
 │
 ├── database/
-│   └── horizontal.db        # SQLite Persistent Storage
+│   └── HORIZON.db        # SQLite Persistent Storage
 │
 ├── src/
 │   ├── types/index.ts       # TypeScript Domain Interfaces
@@ -59,9 +59,9 @@ For instantaneous evaluation, the login screen includes **one-click autofill cre
 
 | Role | Email / Username | Password | Access Capabilities |
 | :--- | :--- | :--- | :--- |
-| **Admin** | `admin@horizontal.edu` | `Admin@2026` | Full administrative oversight, review/accept admission enquiries, view contact messages, publish announcements, manage calendar events, publish news. |
-| **Teacher** | `teacher@horizontal.edu` | `Teacher@2026` | Class rosters, mark daily student attendance (Present/Late/Absent with immediate SQLite update), create and post assignments with rubrics. |
-| **Student** | `student@horizontal.edu` | `Student@2026` | Academic profile (Alexander Hayes, Grade 11-A), weekly timetable (Monday–Friday), pending assignments, personal attendance logs, announcements. |
+| **Admin** | `admin@HORIZON.edu` | `Admin@2026` | Full administrative oversight, review/accept admission enquiries, view contact messages, publish announcements, manage calendar events, publish news. |
+| **Teacher** | `teacher@HORIZON.edu` | `Teacher@2026` | Class rosters, mark daily student attendance (Present/Late/Absent with immediate SQLite update), create and post assignments with rubrics. |
+| **Student** | `student@HORIZON.edu` | `Student@2026` | Academic profile (Alexander Hayes, Grade 11-A), weekly timetable (Monday–Friday), pending assignments, personal attendance logs, announcements. |
 
 ---
 
@@ -90,7 +90,7 @@ pip install -r requirements.txt
 python app.py --port 5001
 ```
 
-The database (`database/horizontal.db`) will automatically create all tables and populate realistic seed data on its initial startup.
+The database (`database/HORIZON.db`) will automatically create all tables and populate realistic seed data on its initial startup.
 
 ### 3. Running the Integrated Full-Stack Application
 
@@ -151,4 +151,5 @@ Visit `http://localhost:3000` in your web browser.
 ---
 
 ## 📄 License
-Educational & Portfolio Showcase. Developed for **HORIZONTAL School**.
+Educational & Portfolio Showcase. Developed for **HORIZON School**.
+

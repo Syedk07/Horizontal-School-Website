@@ -33,7 +33,7 @@ export const NewsPage: React.FC<NewsPageProps> = ({ news, loading }) => {
           Press & Chronicles
         </span>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
-          News from HORIZONTAL
+          News from HORIZON
         </h1>
         <p className="text-lg text-stone-600 leading-relaxed">
           Celebrating scholarly breakthroughs, campus developments, faculty publications, and student community contributions.
@@ -170,7 +170,7 @@ export const NewsPage: React.FC<NewsPageProps> = ({ news, loading }) => {
 
               <div className="pt-6 border-t border-stone-200 flex items-center justify-between">
                 <div className="text-xs text-stone-500">
-                  Published by HORIZONTAL Office of Communications
+                  Published by HORIZON Office of Communications
                 </div>
                 <button
                   onClick={() => setActiveArticle(null)}
@@ -187,3 +187,4 @@ export const NewsPage: React.FC<NewsPageProps> = ({ news, loading }) => {
     </div>
   );
 };
+

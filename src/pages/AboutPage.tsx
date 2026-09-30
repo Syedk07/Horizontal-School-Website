@@ -45,13 +45,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       {/* 1. Page Header */}
       <div className="max-w-3xl space-y-4">
         <span className="text-xs uppercase tracking-widest text-amber-800 font-semibold">
-          About HORIZONTAL
+          About HORIZON
         </span>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
           Educating the Mind, Grounding the Spirit
         </h1>
         <p className="text-lg text-stone-600 leading-relaxed">
-          Founded in 1991, HORIZONTAL has grown into one of the country's most distinctive preparatory institutions, balancing time-honored scholarly discipline with forward-looking scientific exploration.
+          Founded in 1991, HORIZON has grown into one of the country's most distinctive preparatory institutions, balancing time-honored scholarly discipline with forward-looking scientific exploration.
         </p>
       </div>
 
@@ -66,7 +66,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </h2>
           <div className="space-y-4 text-stone-600 leading-relaxed text-sm sm:text-base">
             <p>
-              HORIZONTAL began in 1991 with forty scholars and five dedicated faculty members united by a revolutionary vision: to replace passive memorization with active inquiry, mathematical proof, and original creative discourse.
+              HORIZON began in 1991 with forty scholars and five dedicated faculty members united by a revolutionary vision: to replace passive memorization with active inquiry, mathematical proof, and original creative discourse.
             </p>
             <p>
               Over three and a half decades, our campus has expanded to 64 acres encompassing dedicated laboratories for robotics, genomics, fine arts studios, and an Olympic-caliber athletics complex. Yet our core principle has never wavered: education is not a static vessel to be filled, but an intellectual trajectory moving steadily forward.
@@ -96,7 +96,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="rounded-2xl overflow-hidden shadow-lg border border-stone-200">
             <img
               src="/assets/images/hero_school_campus_1790610519961.jpg"
-              alt="HORIZONTAL Centennial Quad"
+              alt="HORIZON Centennial Quad"
               referrerPolicy="no-referrer"
               className="w-full h-80 lg:h-96 object-cover"
             />
@@ -135,7 +135,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </span>
           <h3 className="font-serif text-3xl font-bold text-white">Our Mission</h3>
           <p className="text-stone-300 leading-relaxed text-sm sm:text-base">
-            HORIZONTAL provides an inclusive, intellectually stimulating educational environment that empowers every student to cultivate disciplined thinking, moral purpose, artistic appreciation, and physical resilience.
+            HORIZON provides an inclusive, intellectually stimulating educational environment that empowers every student to cultivate disciplined thinking, moral purpose, artistic appreciation, and physical resilience.
           </p>
           <ul className="space-y-2 text-sm text-stone-300 pt-2">
             <li className="flex items-center gap-2">
@@ -206,7 +206,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
             <div className="pt-2 text-xs text-stone-600 space-y-1">
               <div>Office: Executive Wing, Room 101</div>
-              <div>Direct: principal@horizontal.edu</div>
+              <div>Direct: principal@HORIZON.edu</div>
             </div>
           </div>
 
@@ -218,13 +218,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               Fostering Thinkers Who Shape the Century
             </h2>
             <p>
-              Welcome to HORIZONTAL. As you explore these pages, you will discover an institution alive with intellectual energy, warm collegiality, and purpose.
+              Welcome to HORIZON. As you explore these pages, you will discover an institution alive with intellectual energy, warm collegiality, and purpose.
             </p>
             <p>
-              When parents ask me what makes HORIZONTAL different from other preparatory academies, my answer is simple: We teach students not what to think, but how to think. We refuse to treat education as an algorithmic checklist. Instead, we invite young people to engage with complex primary texts, formulate testable scientific hypotheses, defend arguments civilly, and discover their distinct individual voices.
+              When parents ask me what makes HORIZON different from other preparatory academies, my answer is simple: We teach students not what to think, but how to think. We refuse to treat education as an algorithmic checklist. Instead, we invite young people to engage with complex primary texts, formulate testable scientific hypotheses, defend arguments civilly, and discover their distinct individual voices.
             </p>
             <p>
-              Our faculty are scholars, researchers, and dedicated mentors who see in every student an extraordinary capacity for transformation. Whether in our state-of-the-art robotics pavilion, our art studios, or our athletics fields, HORIZONTAL provides the fertile ground where intellectual ambition meets humane values.
+              Our faculty are scholars, researchers, and dedicated mentors who see in every student an extraordinary capacity for transformation. Whether in our state-of-the-art robotics pavilion, our art studios, or our athletics fields, HORIZON provides the fertile ground where intellectual ambition meets humane values.
             </p>
             <p>
               I warmly invite you to visit our campus, observe our seminars in session, and experience firsthand what makes our community so extraordinary.
@@ -242,10 +242,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           onClick={() => onNavigate('admissions')}
           className="px-6 py-3 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-sm rounded-lg transition-colors cursor-pointer"
         >
-          Explore Admissions at HORIZONTAL
+          Explore Admissions at HORIZON
         </button>
       </div>
 
     </div>
   );
 };
+

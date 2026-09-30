@@ -128,13 +128,13 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({ onNavigate }) => {
       {/* 1. Header */}
       <div className="max-w-3xl space-y-4">
         <span className="text-xs uppercase tracking-widest text-amber-800 font-semibold">
-          Academics at HORIZONTAL
+          Academics at HORIZON
         </span>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
           An Interdisciplinary Curriculum of Rigor and Discovery
         </h1>
         <p className="text-lg text-stone-600 leading-relaxed">
-          From Primary foundations to collegiate-level Senior Secondary research, HORIZONTAL crafts an unbroken continuum of intellectual challenge, moral maturity, and personal excellence.
+          From Primary foundations to collegiate-level Senior Secondary research, HORIZON crafts an unbroken continuum of intellectual challenge, moral maturity, and personal excellence.
         </p>
       </div>
 
@@ -333,3 +333,4 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({ onNavigate }) => {
     </div>
   );
 };
+

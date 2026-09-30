@@ -26,7 +26,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="absolute inset-0 z-0">
           <img
             src="/assets/images/hero_school_campus_1790610519961.jpg"
-            alt="HORIZONTAL Campus Architectural Pavilion and Grounds"
+            alt="HORIZON Campus Architectural Pavilion and Grounds"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center opacity-40 scale-105 transition-transform duration-1000 ease-out"
           />
@@ -45,7 +45,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h1>
 
             <p className="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl font-normal">
-              At HORIZONTAL, education is an intentional trajectory. Through rigorous scholarship, empirical discovery, and disciplined leadership, we cultivate discerning minds prepared to advance society.
+              At HORIZON, education is an intentional trajectory. Through rigorous scholarship, empirical discovery, and disciplined leadership, we cultivate discerning minds prepared to advance society.
             </p>
 
             {/* Real functional CTAs */}
@@ -54,7 +54,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 onClick={() => onNavigate('academics')}
                 className="px-6 py-3.5 text-sm font-semibold text-stone-950 bg-white hover:bg-stone-100 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap"
               >
-                <span>Explore HORIZONTAL</span>
+                <span>Explore HORIZON</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -214,7 +214,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             Institutional Foundations
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mt-2">
-            The Four Pillars of HORIZONTAL
+            The Four Pillars of HORIZON
           </h2>
           <p className="text-stone-600 mt-3 text-base leading-relaxed">
             Our pedagogical philosophy rests on the conviction that intellect without character is incomplete, and tradition must constantly dialogue with technological innovation.
@@ -349,7 +349,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               Calendar
             </span>
             <h2 className="font-serif text-3xl font-bold text-stone-900 mt-1">
-              Events at HORIZONTAL
+              Events at HORIZON
             </h2>
           </div>
           <button
@@ -406,7 +406,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-amber-900 text-white rounded-2xl p-8 sm:p-12 text-center space-y-6">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white max-w-2xl mx-auto">
-            Ready to Begin Your Journey at HORIZONTAL?
+            Ready to Begin Your Journey at HORIZON?
           </h2>
           <p className="text-amber-100 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
             Discover a community dedicated to intellectual achievement and personal growth. Enrolment inquiries for the 2026–2027 academic term are now being reviewed.
@@ -431,3 +431,4 @@ export const HomePage: React.FC<HomePageProps> = ({
     </div>
   );
 };
+

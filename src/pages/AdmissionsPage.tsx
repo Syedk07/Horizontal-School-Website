@@ -118,15 +118,15 @@ export const AdmissionsPage: React.FC<AdmissionsPageProps> = ({ onNavigate }) =>
 
   const faqs = [
     {
-      q: 'What is the student-to-teacher ratio at HORIZONTAL?',
+      q: 'What is the student-to-teacher ratio at HORIZON?',
       a: 'We maintain a strict 12:1 student-to-teacher ratio across all classrooms and a maximum of 24 scholars per seminar.',
     },
     {
       q: 'Are merit and financial scholarships available?',
-      a: 'Yes. HORIZONTAL awards Dean\'s Academic Scholarships and Need-Blind Financial Aid to approximately 18% of enrolled students annually.',
+      a: 'Yes. HORIZON awards Dean\'s Academic Scholarships and Need-Blind Financial Aid to approximately 18% of enrolled students annually.',
     },
     {
-      q: 'Does HORIZONTAL accept mid-year transfers?',
+      q: 'Does HORIZON accept mid-year transfers?',
       a: 'Mid-year admissions are reviewed on a rolling basis subject to seat availability in the desired grade and strong academic standing.',
     },
     {
@@ -144,7 +144,7 @@ export const AdmissionsPage: React.FC<AdmissionsPageProps> = ({ onNavigate }) =>
           Admissions 2026–2027
         </span>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
-          Join the Scholarly Community of HORIZONTAL
+          Join the Scholarly Community of HORIZON
         </h1>
         <p className="text-lg text-stone-600 leading-relaxed">
           We welcome intellectually curious, energetic students eager to embrace academic challenge, artistic expression, and ethical leadership.
@@ -393,7 +393,7 @@ export const AdmissionsPage: React.FC<AdmissionsPageProps> = ({ onNavigate }) =>
               </div>
 
               <div className="text-center text-xs text-stone-500">
-                🔒 Data is transmitted securely to HORIZONTAL School's Python Flask backend and stored in SQLite.
+                🔒 Data is transmitted securely to HORIZON School's Python Flask backend and stored in SQLite.
               </div>
             </form>
           )}
@@ -429,3 +429,4 @@ export const AdmissionsPage: React.FC<AdmissionsPageProps> = ({ onNavigate }) =>
     </div>
   );
 };
+

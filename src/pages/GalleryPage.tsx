@@ -157,7 +157,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ gallery, loading }) =>
 
           {/* Bottom Caption Bar */}
           <div className="max-w-3xl mx-auto text-center text-stone-300 text-sm italic font-serif">
-            {filteredItems[activeImageIndex].caption || 'Archival image from HORIZONTAL campus and academic records.'}
+            {filteredItems[activeImageIndex].caption || 'Archival image from HORIZON campus and academic records.'}
           </div>
         </div>
       )}
@@ -165,3 +165,4 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ gallery, loading }) =>
     </div>
   );
 };
+

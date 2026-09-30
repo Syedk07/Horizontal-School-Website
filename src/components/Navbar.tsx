@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="text-left group cursor-pointer"
             >
               <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 group-hover:text-amber-900 transition-colors">
-                HORIZONTAL
+                HORIZON
               </span>
             </button>
           </div>
@@ -225,3 +225,4 @@ export const Navbar: React.FC<NavbarProps> = ({
     </header>
   );
 };
+

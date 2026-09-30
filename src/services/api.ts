@@ -8,7 +8,7 @@ const API_BASE = '/api';
 
 // Helper to retrieve auth token
 function getAuthHeader(): Record<string, string> {
-  const token = localStorage.getItem('horizontal_auth_token');
+  const token = localStorage.getItem('HORIZON_auth_token');
   if (token) {
     return {
       'Authorization': `Bearer ${token}`,
@@ -33,7 +33,7 @@ export const api = {
       throw new Error(err.error || 'Authentication failed. Please check your credentials.');
     }
     const data = await res.json();
-    localStorage.setItem('horizontal_auth_token', data.token);
+    localStorage.setItem('HORIZON_auth_token', data.token);
     return data;
   },
 
@@ -46,11 +46,11 @@ export const api = {
     } catch (e) {
       console.warn('Logout request failed:', e);
     }
-    localStorage.removeItem('horizontal_auth_token');
+    localStorage.removeItem('HORIZON_auth_token');
   },
 
   async getMe(): Promise<User | null> {
-    const token = localStorage.getItem('horizontal_auth_token');
+    const token = localStorage.getItem('HORIZON_auth_token');
     if (!token) return null;
     try {
       const res = await fetch(`${API_BASE}/me`, {
@@ -362,3 +362,4 @@ export const api = {
     return res.json();
   },
 };
+

@@ -66,7 +66,7 @@ export const ContactPage: React.FC = () => {
           Get in Touch
         </span>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
-          Connect with HORIZONTAL
+          Connect with HORIZON
         </h1>
         <p className="text-lg text-stone-600 leading-relaxed">
           Whether you are an inquiring parent, prospective student, visiting scholar, or community partner, we welcome your correspondence.
@@ -106,9 +106,9 @@ export const ContactPage: React.FC = () => {
           </div>
           <h3 className="font-serif text-lg font-bold text-stone-900">Electronic Mail</h3>
           <div className="text-xs text-stone-600 space-y-1">
-            <div>Admissions: admissions@horizontal.edu</div>
-            <div>Administration: info@horizontal.edu</div>
-            <div>Principal: principal@horizontal.edu</div>
+            <div>Admissions: admissions@HORIZON.edu</div>
+            <div>Administration: info@HORIZON.edu</div>
+            <div>Principal: principal@HORIZON.edu</div>
           </div>
         </div>
 
@@ -298,3 +298,4 @@ export const ContactPage: React.FC = () => {
     </div>
   );
 };
+
