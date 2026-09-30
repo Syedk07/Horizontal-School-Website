@@ -153,3 +153,4 @@ Visit `http://localhost:3000` in your web browser.
 ## 📄 License
 Educational & Portfolio Showcase. Developed for **HORIZON School**.
 
+
